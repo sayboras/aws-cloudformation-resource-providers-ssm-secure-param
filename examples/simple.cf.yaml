@@ -1,0 +1,11 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: 'Sample CF for Secure SSM'
+
+Resources:
+  SampleSecureSSMParam:
+    Type: RP::SSM::SecureParameter
+    Properties:
+      Description: "Sample secure ssm"
+      Name: "/sample/secure/ssm"
+      Value: "secret"
+      KeyId: "alias/aws/ssm"

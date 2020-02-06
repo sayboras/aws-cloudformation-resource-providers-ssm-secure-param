@@ -1,0 +1,10 @@
+{
+    "typeName": "RP::SSM::SecureParameter",
+    "language": "go",
+    "runtime": "go1.x",
+    "entrypoint": "handler",
+    "testEntrypoint": "handler",
+    "settings": {
+        "importpath": "github.com/sayboras/aws-cloudformation-resource-providers-ssm-secure-param"
+    }
+}
