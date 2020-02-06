@@ -1,0 +1,656 @@
+[2020-02-06T02:41:21Z] DEBUG    - Logging set up successfully
+[2020-02-06T02:41:21Z] DEBUG    - Running init: Namespace(command=<function init at 0x7efbfc533dd0>, force=False, subparser_name='init', verbose=0, version=False)
+[2020-02-06T02:41:21Z] DEBUG    - Root directory: /home/tammach/go/src/github.com/sayboras/aws-cloudformation-resource-providers-ssm-secure-param
+[2020-02-06T02:41:21Z] WARNING  - Initializing new project
+[2020-02-06T02:41:21Z] DEBUG    - Loading project file '/home/tammach/go/src/github.com/sayboras/aws-cloudformation-resource-providers-ssm-secure-param/.rpdk-config'
+[2020-02-06T02:41:31Z] DEBUG    - Resource type identifier: RP::SSM::SecureParameter
+[2020-02-06T02:41:33Z] DEBUG    - Language plugin: go
+[2020-02-06T02:41:33Z] DEBUG    - Init started
+[2020-02-06T02:41:42Z] DEBUG    - Writing .gitignore: /home/tammach/go/src/github.com/sayboras/aws-cloudformation-resource-providers-ssm-secure-param/.gitignore
+[2020-02-06T02:41:42Z] WARNING  - File already exists, not overwriting '/home/tammach/go/src/github.com/sayboras/aws-cloudformation-resource-providers-ssm-secure-param/.gitignore'
+[2020-02-06T02:41:42Z] DEBUG    - Making source folder structure: /home/tammach/go/src/github.com/sayboras/aws-cloudformation-resource-providers-ssm-secure-param/cmd/resource
+[2020-02-06T02:41:42Z] DEBUG    - Writing Makefile: /home/tammach/go/src/github.com/sayboras/aws-cloudformation-resource-providers-ssm-secure-param/Makefile
+[2020-02-06T02:41:42Z] DEBUG    - Writing go.mod: /home/tammach/go/src/github.com/sayboras/aws-cloudformation-resource-providers-ssm-secure-param/go.mod
+[2020-02-06T02:41:42Z] DEBUG    - Writing SAM template: /home/tammach/go/src/github.com/sayboras/aws-cloudformation-resource-providers-ssm-secure-param/template.yml
+[2020-02-06T02:41:42Z] DEBUG    - Writing handlers and tests
+[2020-02-06T02:41:42Z] DEBUG    - Writing stub handlers
+[2020-02-06T02:41:42Z] DEBUG    - Writing README: /home/tammach/go/src/github.com/sayboras/aws-cloudformation-resource-providers-ssm-secure-param/README.md
+[2020-02-06T02:41:42Z] DEBUG    - Init complete
+[2020-02-06T02:41:42Z] DEBUG    - Overwriting '/home/tammach/go/src/github.com/sayboras/aws-cloudformation-resource-providers-ssm-secure-param/.rpdk-config'
+[2020-02-06T02:41:42Z] DEBUG    - Writing Resource Role CloudFormation template: /home/tammach/go/src/github.com/sayboras/aws-cloudformation-resource-providers-ssm-secure-param/resource-role.yaml
+[2020-02-06T02:41:42Z] DEBUG    - Overwriting '/home/tammach/go/src/github.com/sayboras/aws-cloudformation-resource-providers-ssm-secure-param/resource-role.yaml'
+[2020-02-06T02:41:42Z] DEBUG    - Generate started
+[2020-02-06T02:41:42Z] DEBUG    - Writing Types
+[2020-02-06T02:41:42Z] DEBUG    - Overwriting '/home/tammach/go/src/github.com/sayboras/aws-cloudformation-resource-providers-ssm-secure-param/cmd/resource/model.go'
+[2020-02-06T02:41:42Z] DEBUG    - Writing project: /home/tammach/go/src/github.com/sayboras/aws-cloudformation-resource-providers-ssm-secure-param/cmd/main.go
+[2020-02-06T02:41:42Z] DEBUG    - Overwriting '/home/tammach/go/src/github.com/sayboras/aws-cloudformation-resource-providers-ssm-secure-param/cmd/main.go'
+[2020-02-06T02:41:43Z] WARNING  - Initialized a new project in /home/tammach/go/src/github.com/sayboras/aws-cloudformation-resource-providers-ssm-secure-param
+[2020-02-06T02:41:43Z] DEBUG    - Finished init
+[2020-02-06T03:00:10Z] DEBUG    - Logging set up successfully
+[2020-02-06T03:00:10Z] DEBUG    - Running generate: Namespace(command=<function generate at 0x7efbfce104d0>, subparser_name='generate', verbose=0, version=False)
+[2020-02-06T03:00:10Z] DEBUG    - Root directory: /home/tammach/go/src/github.com/sayboras/aws-cloudformation-resource-providers-ssm-secure-param
+[2020-02-06T03:00:10Z] DEBUG    - Loading project file '/home/tammach/go/src/github.com/sayboras/aws-cloudformation-resource-providers-ssm-secure-param/.rpdk-config'
+[2020-02-06T03:00:10Z] INFO     - Validating your resource specification...
+[2020-02-06T03:00:11Z] DEBUG    - Resource spec validation failed
+Traceback (most recent call last):
+  File "/home/tammach/.local/lib/python3.7/site-packages/jsonschema/validators.py", line 774, in resolve_from_url
+    document = self.store[url]
+  File "/home/tammach/.local/lib/python3.7/site-packages/jsonschema/_utils.py", line 22, in __getitem__
+    return self.store[self.normalize(uri)]
+KeyError: 'file:///home/tammach/go/src/github.com/sayboras/aws-cloudformation-resource-providers-ssm-secure-param/string'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.7/urllib/request.py", line 1473, in open_local_file
+    stats = os.stat(localfile)
+FileNotFoundError: [Errno 2] No such file or directory: '/home/tammach/go/src/github.com/sayboras/aws-cloudformation-resource-providers-ssm-secure-param/string'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/tammach/.local/lib/python3.7/site-packages/jsonschema/validators.py", line 777, in resolve_from_url
+    document = self.resolve_remote(url)
+  File "/home/tammach/.local/lib/python3.7/site-packages/jsonschema/validators.py", line 863, in resolve_remote
+    with urlopen(uri) as url:
+  File "/usr/lib/python3.7/urllib/request.py", line 222, in urlopen
+    return opener.open(url, data, timeout)
+  File "/usr/lib/python3.7/urllib/request.py", line 525, in open
+    response = self._open(req, data)
+  File "/usr/lib/python3.7/urllib/request.py", line 543, in _open
+    '_open', req)
+  File "/usr/lib/python3.7/urllib/request.py", line 503, in _call_chain
+    result = func(*args)
+  File "/usr/lib/python3.7/urllib/request.py", line 1451, in file_open
+    return self.open_local_file(req)
+  File "/usr/lib/python3.7/urllib/request.py", line 1490, in open_local_file
+    raise URLError(exp)
+urllib.error.URLError: <urlopen error [Errno 2] No such file or directory: '/home/tammach/go/src/github.com/sayboras/aws-cloudformation-resource-providers-ssm-secure-param/string'>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/tammach/.local/lib/python3.7/site-packages/rpdk/core/data_loaders.py", line 117, in load_resource_spec
+    inlined = inliner.inline()
+  File "/home/tammach/.local/lib/python3.7/site-packages/rpdk/core/jsonutils/inliner.py", line 85, in inline
+    self._walk_schema()
+  File "/home/tammach/.local/lib/python3.7/site-packages/rpdk/core/jsonutils/inliner.py", line 27, in _walk_schema
+    self._walk(self.schema, (BASE,))
+  File "/home/tammach/.local/lib/python3.7/site-packages/rpdk/core/jsonutils/inliner.py", line 52, in _walk
+    self._walk(value, old_path + (key,))
+  File "/home/tammach/.local/lib/python3.7/site-packages/rpdk/core/jsonutils/inliner.py", line 52, in _walk
+    self._walk(value, old_path + (key,))
+  File "/home/tammach/.local/lib/python3.7/site-packages/rpdk/core/jsonutils/inliner.py", line 52, in _walk
+    self._walk(value, old_path + (key,))
+  [Previous line repeated 1 more time]
+  File "/home/tammach/.local/lib/python3.7/site-packages/rpdk/core/jsonutils/inliner.py", line 39, in _walk
+    url, resolved = self.resolve(value)
+  File "/home/tammach/.local/lib/python3.7/site-packages/jsonschema/validators.py", line 766, in resolve
+    return url, self._remote_cache(url)
+  File "/home/tammach/.local/lib/python3.7/site-packages/jsonschema/validators.py", line 779, in resolve_from_url
+    raise exceptions.RefResolutionError(exc)
+jsonschema.exceptions.RefResolutionError: <urlopen error [Errno 2] No such file or directory: '/home/tammach/go/src/github.com/sayboras/aws-cloudformation-resource-providers-ssm-secure-param/string'>
+[2020-02-06T03:00:11Z] DEBUG    - Resource specification is invalid: <urlopen error [Errno 2] No such file or directory: '/home/tammach/go/src/github.com/sayboras/aws-cloudformation-resource-providers-ssm-secure-param/string'>
+Traceback (most recent call last):
+  File "/home/tammach/.local/lib/python3.7/site-packages/jsonschema/validators.py", line 774, in resolve_from_url
+    document = self.store[url]
+  File "/home/tammach/.local/lib/python3.7/site-packages/jsonschema/_utils.py", line 22, in __getitem__
+    return self.store[self.normalize(uri)]
+KeyError: 'file:///home/tammach/go/src/github.com/sayboras/aws-cloudformation-resource-providers-ssm-secure-param/string'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.7/urllib/request.py", line 1473, in open_local_file
+    stats = os.stat(localfile)
+FileNotFoundError: [Errno 2] No such file or directory: '/home/tammach/go/src/github.com/sayboras/aws-cloudformation-resource-providers-ssm-secure-param/string'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/tammach/.local/lib/python3.7/site-packages/jsonschema/validators.py", line 777, in resolve_from_url
+    document = self.resolve_remote(url)
+  File "/home/tammach/.local/lib/python3.7/site-packages/jsonschema/validators.py", line 863, in resolve_remote
+    with urlopen(uri) as url:
+  File "/usr/lib/python3.7/urllib/request.py", line 222, in urlopen
+    return opener.open(url, data, timeout)
+  File "/usr/lib/python3.7/urllib/request.py", line 525, in open
+    response = self._open(req, data)
+  File "/usr/lib/python3.7/urllib/request.py", line 543, in _open
+    '_open', req)
+  File "/usr/lib/python3.7/urllib/request.py", line 503, in _call_chain
+    result = func(*args)
+  File "/usr/lib/python3.7/urllib/request.py", line 1451, in file_open
+    return self.open_local_file(req)
+  File "/usr/lib/python3.7/urllib/request.py", line 1490, in open_local_file
+    raise URLError(exp)
+urllib.error.URLError: <urlopen error [Errno 2] No such file or directory: '/home/tammach/go/src/github.com/sayboras/aws-cloudformation-resource-providers-ssm-secure-param/string'>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/tammach/.local/lib/python3.7/site-packages/rpdk/core/data_loaders.py", line 117, in load_resource_spec
+    inlined = inliner.inline()
+  File "/home/tammach/.local/lib/python3.7/site-packages/rpdk/core/jsonutils/inliner.py", line 85, in inline
+    self._walk_schema()
+  File "/home/tammach/.local/lib/python3.7/site-packages/rpdk/core/jsonutils/inliner.py", line 27, in _walk_schema
+    self._walk(self.schema, (BASE,))
+  File "/home/tammach/.local/lib/python3.7/site-packages/rpdk/core/jsonutils/inliner.py", line 52, in _walk
+    self._walk(value, old_path + (key,))
+  File "/home/tammach/.local/lib/python3.7/site-packages/rpdk/core/jsonutils/inliner.py", line 52, in _walk
+    self._walk(value, old_path + (key,))
+  File "/home/tammach/.local/lib/python3.7/site-packages/rpdk/core/jsonutils/inliner.py", line 52, in _walk
+    self._walk(value, old_path + (key,))
+  [Previous line repeated 1 more time]
+  File "/home/tammach/.local/lib/python3.7/site-packages/rpdk/core/jsonutils/inliner.py", line 39, in _walk
+    url, resolved = self.resolve(value)
+  File "/home/tammach/.local/lib/python3.7/site-packages/jsonschema/validators.py", line 766, in resolve
+    return url, self._remote_cache(url)
+  File "/home/tammach/.local/lib/python3.7/site-packages/jsonschema/validators.py", line 779, in resolve_from_url
+    raise exceptions.RefResolutionError(exc)
+jsonschema.exceptions.RefResolutionError: <urlopen error [Errno 2] No such file or directory: '/home/tammach/go/src/github.com/sayboras/aws-cloudformation-resource-providers-ssm-secure-param/string'>
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/tammach/.local/lib/python3.7/site-packages/rpdk/core/project.py", line 255, in load
+    self.load_schema()
+  File "/home/tammach/.local/lib/python3.7/site-packages/rpdk/core/project.py", line 191, in load_schema
+    self.schema = load_resource_spec(f)
+  File "/home/tammach/.local/lib/python3.7/site-packages/rpdk/core/data_loaders.py", line 120, in load_resource_spec
+    raise SpecValidationError(str(e)) from e
+rpdk.core.exceptions.SpecValidationError: <urlopen error [Errno 2] No such file or directory: '/home/tammach/go/src/github.com/sayboras/aws-cloudformation-resource-providers-ssm-secure-param/string'>
+[2020-02-06T03:00:11Z] DEBUG    - Caught exit recommendation
+Traceback (most recent call last):
+  File "/home/tammach/.local/lib/python3.7/site-packages/jsonschema/validators.py", line 774, in resolve_from_url
+    document = self.store[url]
+  File "/home/tammach/.local/lib/python3.7/site-packages/jsonschema/_utils.py", line 22, in __getitem__
+    return self.store[self.normalize(uri)]
+KeyError: 'file:///home/tammach/go/src/github.com/sayboras/aws-cloudformation-resource-providers-ssm-secure-param/string'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.7/urllib/request.py", line 1473, in open_local_file
+    stats = os.stat(localfile)
+FileNotFoundError: [Errno 2] No such file or directory: '/home/tammach/go/src/github.com/sayboras/aws-cloudformation-resource-providers-ssm-secure-param/string'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/tammach/.local/lib/python3.7/site-packages/jsonschema/validators.py", line 777, in resolve_from_url
+    document = self.resolve_remote(url)
+  File "/home/tammach/.local/lib/python3.7/site-packages/jsonschema/validators.py", line 863, in resolve_remote
+    with urlopen(uri) as url:
+  File "/usr/lib/python3.7/urllib/request.py", line 222, in urlopen
+    return opener.open(url, data, timeout)
+  File "/usr/lib/python3.7/urllib/request.py", line 525, in open
+    response = self._open(req, data)
+  File "/usr/lib/python3.7/urllib/request.py", line 543, in _open
+    '_open', req)
+  File "/usr/lib/python3.7/urllib/request.py", line 503, in _call_chain
+    result = func(*args)
+  File "/usr/lib/python3.7/urllib/request.py", line 1451, in file_open
+    return self.open_local_file(req)
+  File "/usr/lib/python3.7/urllib/request.py", line 1490, in open_local_file
+    raise URLError(exp)
+urllib.error.URLError: <urlopen error [Errno 2] No such file or directory: '/home/tammach/go/src/github.com/sayboras/aws-cloudformation-resource-providers-ssm-secure-param/string'>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/tammach/.local/lib/python3.7/site-packages/rpdk/core/data_loaders.py", line 117, in load_resource_spec
+    inlined = inliner.inline()
+  File "/home/tammach/.local/lib/python3.7/site-packages/rpdk/core/jsonutils/inliner.py", line 85, in inline
+    self._walk_schema()
+  File "/home/tammach/.local/lib/python3.7/site-packages/rpdk/core/jsonutils/inliner.py", line 27, in _walk_schema
+    self._walk(self.schema, (BASE,))
+  File "/home/tammach/.local/lib/python3.7/site-packages/rpdk/core/jsonutils/inliner.py", line 52, in _walk
+    self._walk(value, old_path + (key,))
+  File "/home/tammach/.local/lib/python3.7/site-packages/rpdk/core/jsonutils/inliner.py", line 52, in _walk
+    self._walk(value, old_path + (key,))
+  File "/home/tammach/.local/lib/python3.7/site-packages/rpdk/core/jsonutils/inliner.py", line 52, in _walk
+    self._walk(value, old_path + (key,))
+  [Previous line repeated 1 more time]
+  File "/home/tammach/.local/lib/python3.7/site-packages/rpdk/core/jsonutils/inliner.py", line 39, in _walk
+    url, resolved = self.resolve(value)
+  File "/home/tammach/.local/lib/python3.7/site-packages/jsonschema/validators.py", line 766, in resolve
+    return url, self._remote_cache(url)
+  File "/home/tammach/.local/lib/python3.7/site-packages/jsonschema/validators.py", line 779, in resolve_from_url
+    raise exceptions.RefResolutionError(exc)
+jsonschema.exceptions.RefResolutionError: <urlopen error [Errno 2] No such file or directory: '/home/tammach/go/src/github.com/sayboras/aws-cloudformation-resource-providers-ssm-secure-param/string'>
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/tammach/.local/lib/python3.7/site-packages/rpdk/core/project.py", line 255, in load
+    self.load_schema()
+  File "/home/tammach/.local/lib/python3.7/site-packages/rpdk/core/project.py", line 191, in load_schema
+    self.schema = load_resource_spec(f)
+  File "/home/tammach/.local/lib/python3.7/site-packages/rpdk/core/data_loaders.py", line 120, in load_resource_spec
+    raise SpecValidationError(str(e)) from e
+rpdk.core.exceptions.SpecValidationError: <urlopen error [Errno 2] No such file or directory: '/home/tammach/go/src/github.com/sayboras/aws-cloudformation-resource-providers-ssm-secure-param/string'>
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/tammach/.local/lib/python3.7/site-packages/rpdk/core/cli.py", line 98, in main
+    args.command(args)
+  File "/home/tammach/.local/lib/python3.7/site-packages/rpdk/core/generate.py", line 14, in generate
+    project.load()
+  File "/home/tammach/.local/lib/python3.7/site-packages/rpdk/core/project.py", line 260, in load
+    self._raise_invalid_project(msg, e)
+  File "/home/tammach/.local/lib/python3.7/site-packages/rpdk/core/project.py", line 113, in _raise_invalid_project
+    raise InvalidProjectError(msg) from e
+rpdk.core.exceptions.InvalidProjectError: Resource specification is invalid: <urlopen error [Errno 2] No such file or directory: '/home/tammach/go/src/github.com/sayboras/aws-cloudformation-resource-providers-ssm-secure-param/string'>
+[2020-02-06T03:00:11Z] CRITICAL - Resource specification is invalid: <urlopen error [Errno 2] No such file or directory: '/home/tammach/go/src/github.com/sayboras/aws-cloudformation-resource-providers-ssm-secure-param/string'>
+[2020-02-06T03:01:42Z] DEBUG    - Logging set up successfully
+[2020-02-06T03:01:42Z] DEBUG    - Running generate: Namespace(command=<function generate at 0x7efbfce104d0>, subparser_name='generate', verbose=0, version=False)
+[2020-02-06T03:01:42Z] DEBUG    - Root directory: /home/tammach/go/src/github.com/sayboras/aws-cloudformation-resource-providers-ssm-secure-param
+[2020-02-06T03:01:42Z] DEBUG    - Loading project file '/home/tammach/go/src/github.com/sayboras/aws-cloudformation-resource-providers-ssm-secure-param/.rpdk-config'
+[2020-02-06T03:01:42Z] INFO     - Validating your resource specification...
+[2020-02-06T03:01:43Z] DEBUG    - Rewriting refs in '<BASE>' (file:///home/tammach/go/src/github.com/sayboras/aws-cloudformation-resource-providers-ssm-secure-param/rp-ssm-secureparameter.json)
+[2020-02-06T03:01:43Z] DEBUG    - Writing Resource Role CloudFormation template: /home/tammach/go/src/github.com/sayboras/aws-cloudformation-resource-providers-ssm-secure-param/resource-role.yaml
+[2020-02-06T03:01:43Z] DEBUG    - Overwriting '/home/tammach/go/src/github.com/sayboras/aws-cloudformation-resource-providers-ssm-secure-param/resource-role.yaml'
+[2020-02-06T03:01:43Z] DEBUG    - Generate started
+[2020-02-06T03:01:43Z] DEBUG    - Writing Types
+[2020-02-06T03:01:43Z] DEBUG    - Unhandled exception
+Traceback (most recent call last):
+  File "/home/tammach/.local/lib/python3.7/site-packages/rpdk/core/jsonutils/flattener.py", line 59, in _walk
+    ref_path = sub_schema["$ref"]
+KeyError: '$ref'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/tammach/.local/lib/python3.7/site-packages/rpdk/core/jsonutils/flattener.py", line 59, in _walk
+    ref_path = sub_schema["$ref"]
+KeyError: '$ref'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/tammach/.local/lib/python3.7/site-packages/rpdk/core/cli.py", line 98, in main
+    args.command(args)
+  File "/home/tammach/.local/lib/python3.7/site-packages/rpdk/core/generate.py", line 15, in generate
+    project.generate()
+  File "/home/tammach/.local/lib/python3.7/site-packages/rpdk/core/project.py", line 243, in generate
+    return self._plugin.generate(self)
+  File "/home/tammach/.local/lib/python3.7/site-packages/rpdk/go/codegen.py", line 148, in generate
+    models = resolve_models(project.schema)
+  File "/home/tammach/.local/lib/python3.7/site-packages/rpdk/core/jsonutils/resolver.py", line 208, in resolve_models
+    objects = JsonSchemaFlattener(schema).flatten_schema()
+  File "/home/tammach/.local/lib/python3.7/site-packages/rpdk/core/jsonutils/flattener.py", line 37, in flatten_schema
+    self._walk(self._full_schema, ())
+  File "/home/tammach/.local/lib/python3.7/site-packages/rpdk/core/jsonutils/flattener.py", line 68, in _walk
+    sub_schema = self._flatten_object_type(sub_schema, property_path)
+  File "/home/tammach/.local/lib/python3.7/site-packages/rpdk/core/jsonutils/flattener.py", line 138, in _flatten_object_type
+    prop_schema, path + ("properties", prop_name)
+  File "/home/tammach/.local/lib/python3.7/site-packages/rpdk/core/jsonutils/flattener.py", line 68, in _walk
+    sub_schema = self._flatten_object_type(sub_schema, property_path)
+  File "/home/tammach/.local/lib/python3.7/site-packages/rpdk/core/jsonutils/flattener.py", line 155, in _flatten_object_type
+    prop_schema, path + ("patternProperties", pattern)
+  File "/home/tammach/.local/lib/python3.7/site-packages/rpdk/core/jsonutils/flattener.py", line 55, in _walk
+    sub_schema = dict(sub_schema)
+ValueError: dictionary update sequence element #0 has length 1; 2 is required
+[2020-02-06T03:03:00Z] DEBUG    - Logging set up successfully
+[2020-02-06T03:03:00Z] DEBUG    - Running generate: Namespace(command=<function generate at 0x7efbfce104d0>, subparser_name='generate', verbose=0, version=False)
+[2020-02-06T03:03:00Z] DEBUG    - Root directory: /home/tammach/go/src/github.com/sayboras/aws-cloudformation-resource-providers-ssm-secure-param
+[2020-02-06T03:03:00Z] DEBUG    - Loading project file '/home/tammach/go/src/github.com/sayboras/aws-cloudformation-resource-providers-ssm-secure-param/.rpdk-config'
+[2020-02-06T03:03:00Z] INFO     - Validating your resource specification...
+[2020-02-06T03:03:01Z] DEBUG    - Resource spec validation failed
+Traceback (most recent call last):
+  File "/home/tammach/.local/lib/python3.7/site-packages/jsonschema/validators.py", line 774, in resolve_from_url
+    document = self.store[url]
+  File "/home/tammach/.local/lib/python3.7/site-packages/jsonschema/_utils.py", line 22, in __getitem__
+    return self.store[self.normalize(uri)]
+KeyError: 'file:///home/tammach/go/src/github.com/sayboras/aws-cloudformation-resource-providers-ssm-secure-param/aws.common.types.v1.json'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.7/urllib/request.py", line 1473, in open_local_file
+    stats = os.stat(localfile)
+FileNotFoundError: [Errno 2] No such file or directory: '/home/tammach/go/src/github.com/sayboras/aws-cloudformation-resource-providers-ssm-secure-param/aws.common.types.v1.json'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/tammach/.local/lib/python3.7/site-packages/jsonschema/validators.py", line 777, in resolve_from_url
+    document = self.resolve_remote(url)
+  File "/home/tammach/.local/lib/python3.7/site-packages/jsonschema/validators.py", line 863, in resolve_remote
+    with urlopen(uri) as url:
+  File "/usr/lib/python3.7/urllib/request.py", line 222, in urlopen
+    return opener.open(url, data, timeout)
+  File "/usr/lib/python3.7/urllib/request.py", line 525, in open
+    response = self._open(req, data)
+  File "/usr/lib/python3.7/urllib/request.py", line 543, in _open
+    '_open', req)
+  File "/usr/lib/python3.7/urllib/request.py", line 503, in _call_chain
+    result = func(*args)
+  File "/usr/lib/python3.7/urllib/request.py", line 1451, in file_open
+    return self.open_local_file(req)
+  File "/usr/lib/python3.7/urllib/request.py", line 1490, in open_local_file
+    raise URLError(exp)
+urllib.error.URLError: <urlopen error [Errno 2] No such file or directory: '/home/tammach/go/src/github.com/sayboras/aws-cloudformation-resource-providers-ssm-secure-param/aws.common.types.v1.json'>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/tammach/.local/lib/python3.7/site-packages/rpdk/core/data_loaders.py", line 117, in load_resource_spec
+    inlined = inliner.inline()
+  File "/home/tammach/.local/lib/python3.7/site-packages/rpdk/core/jsonutils/inliner.py", line 85, in inline
+    self._walk_schema()
+  File "/home/tammach/.local/lib/python3.7/site-packages/rpdk/core/jsonutils/inliner.py", line 27, in _walk_schema
+    self._walk(self.schema, (BASE,))
+  File "/home/tammach/.local/lib/python3.7/site-packages/rpdk/core/jsonutils/inliner.py", line 52, in _walk
+    self._walk(value, old_path + (key,))
+  File "/home/tammach/.local/lib/python3.7/site-packages/rpdk/core/jsonutils/inliner.py", line 52, in _walk
+    self._walk(value, old_path + (key,))
+  File "/home/tammach/.local/lib/python3.7/site-packages/rpdk/core/jsonutils/inliner.py", line 39, in _walk
+    url, resolved = self.resolve(value)
+  File "/home/tammach/.local/lib/python3.7/site-packages/jsonschema/validators.py", line 766, in resolve
+    return url, self._remote_cache(url)
+  File "/home/tammach/.local/lib/python3.7/site-packages/jsonschema/validators.py", line 779, in resolve_from_url
+    raise exceptions.RefResolutionError(exc)
+jsonschema.exceptions.RefResolutionError: <urlopen error [Errno 2] No such file or directory: '/home/tammach/go/src/github.com/sayboras/aws-cloudformation-resource-providers-ssm-secure-param/aws.common.types.v1.json'>
+[2020-02-06T03:03:01Z] DEBUG    - Resource specification is invalid: <urlopen error [Errno 2] No such file or directory: '/home/tammach/go/src/github.com/sayboras/aws-cloudformation-resource-providers-ssm-secure-param/aws.common.types.v1.json'>
+Traceback (most recent call last):
+  File "/home/tammach/.local/lib/python3.7/site-packages/jsonschema/validators.py", line 774, in resolve_from_url
+    document = self.store[url]
+  File "/home/tammach/.local/lib/python3.7/site-packages/jsonschema/_utils.py", line 22, in __getitem__
+    return self.store[self.normalize(uri)]
+KeyError: 'file:///home/tammach/go/src/github.com/sayboras/aws-cloudformation-resource-providers-ssm-secure-param/aws.common.types.v1.json'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.7/urllib/request.py", line 1473, in open_local_file
+    stats = os.stat(localfile)
+FileNotFoundError: [Errno 2] No such file or directory: '/home/tammach/go/src/github.com/sayboras/aws-cloudformation-resource-providers-ssm-secure-param/aws.common.types.v1.json'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/tammach/.local/lib/python3.7/site-packages/jsonschema/validators.py", line 777, in resolve_from_url
+    document = self.resolve_remote(url)
+  File "/home/tammach/.local/lib/python3.7/site-packages/jsonschema/validators.py", line 863, in resolve_remote
+    with urlopen(uri) as url:
+  File "/usr/lib/python3.7/urllib/request.py", line 222, in urlopen
+    return opener.open(url, data, timeout)
+  File "/usr/lib/python3.7/urllib/request.py", line 525, in open
+    response = self._open(req, data)
+  File "/usr/lib/python3.7/urllib/request.py", line 543, in _open
+    '_open', req)
+  File "/usr/lib/python3.7/urllib/request.py", line 503, in _call_chain
+    result = func(*args)
+  File "/usr/lib/python3.7/urllib/request.py", line 1451, in file_open
+    return self.open_local_file(req)
+  File "/usr/lib/python3.7/urllib/request.py", line 1490, in open_local_file
+    raise URLError(exp)
+urllib.error.URLError: <urlopen error [Errno 2] No such file or directory: '/home/tammach/go/src/github.com/sayboras/aws-cloudformation-resource-providers-ssm-secure-param/aws.common.types.v1.json'>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/tammach/.local/lib/python3.7/site-packages/rpdk/core/data_loaders.py", line 117, in load_resource_spec
+    inlined = inliner.inline()
+  File "/home/tammach/.local/lib/python3.7/site-packages/rpdk/core/jsonutils/inliner.py", line 85, in inline
+    self._walk_schema()
+  File "/home/tammach/.local/lib/python3.7/site-packages/rpdk/core/jsonutils/inliner.py", line 27, in _walk_schema
+    self._walk(self.schema, (BASE,))
+  File "/home/tammach/.local/lib/python3.7/site-packages/rpdk/core/jsonutils/inliner.py", line 52, in _walk
+    self._walk(value, old_path + (key,))
+  File "/home/tammach/.local/lib/python3.7/site-packages/rpdk/core/jsonutils/inliner.py", line 52, in _walk
+    self._walk(value, old_path + (key,))
+  File "/home/tammach/.local/lib/python3.7/site-packages/rpdk/core/jsonutils/inliner.py", line 39, in _walk
+    url, resolved = self.resolve(value)
+  File "/home/tammach/.local/lib/python3.7/site-packages/jsonschema/validators.py", line 766, in resolve
+    return url, self._remote_cache(url)
+  File "/home/tammach/.local/lib/python3.7/site-packages/jsonschema/validators.py", line 779, in resolve_from_url
+    raise exceptions.RefResolutionError(exc)
+jsonschema.exceptions.RefResolutionError: <urlopen error [Errno 2] No such file or directory: '/home/tammach/go/src/github.com/sayboras/aws-cloudformation-resource-providers-ssm-secure-param/aws.common.types.v1.json'>
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/tammach/.local/lib/python3.7/site-packages/rpdk/core/project.py", line 255, in load
+    self.load_schema()
+  File "/home/tammach/.local/lib/python3.7/site-packages/rpdk/core/project.py", line 191, in load_schema
+    self.schema = load_resource_spec(f)
+  File "/home/tammach/.local/lib/python3.7/site-packages/rpdk/core/data_loaders.py", line 120, in load_resource_spec
+    raise SpecValidationError(str(e)) from e
+rpdk.core.exceptions.SpecValidationError: <urlopen error [Errno 2] No such file or directory: '/home/tammach/go/src/github.com/sayboras/aws-cloudformation-resource-providers-ssm-secure-param/aws.common.types.v1.json'>
+[2020-02-06T03:03:01Z] DEBUG    - Caught exit recommendation
+Traceback (most recent call last):
+  File "/home/tammach/.local/lib/python3.7/site-packages/jsonschema/validators.py", line 774, in resolve_from_url
+    document = self.store[url]
+  File "/home/tammach/.local/lib/python3.7/site-packages/jsonschema/_utils.py", line 22, in __getitem__
+    return self.store[self.normalize(uri)]
+KeyError: 'file:///home/tammach/go/src/github.com/sayboras/aws-cloudformation-resource-providers-ssm-secure-param/aws.common.types.v1.json'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.7/urllib/request.py", line 1473, in open_local_file
+    stats = os.stat(localfile)
+FileNotFoundError: [Errno 2] No such file or directory: '/home/tammach/go/src/github.com/sayboras/aws-cloudformation-resource-providers-ssm-secure-param/aws.common.types.v1.json'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/tammach/.local/lib/python3.7/site-packages/jsonschema/validators.py", line 777, in resolve_from_url
+    document = self.resolve_remote(url)
+  File "/home/tammach/.local/lib/python3.7/site-packages/jsonschema/validators.py", line 863, in resolve_remote
+    with urlopen(uri) as url:
+  File "/usr/lib/python3.7/urllib/request.py", line 222, in urlopen
+    return opener.open(url, data, timeout)
+  File "/usr/lib/python3.7/urllib/request.py", line 525, in open
+    response = self._open(req, data)
+  File "/usr/lib/python3.7/urllib/request.py", line 543, in _open
+    '_open', req)
+  File "/usr/lib/python3.7/urllib/request.py", line 503, in _call_chain
+    result = func(*args)
+  File "/usr/lib/python3.7/urllib/request.py", line 1451, in file_open
+    return self.open_local_file(req)
+  File "/usr/lib/python3.7/urllib/request.py", line 1490, in open_local_file
+    raise URLError(exp)
+urllib.error.URLError: <urlopen error [Errno 2] No such file or directory: '/home/tammach/go/src/github.com/sayboras/aws-cloudformation-resource-providers-ssm-secure-param/aws.common.types.v1.json'>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/tammach/.local/lib/python3.7/site-packages/rpdk/core/data_loaders.py", line 117, in load_resource_spec
+    inlined = inliner.inline()
+  File "/home/tammach/.local/lib/python3.7/site-packages/rpdk/core/jsonutils/inliner.py", line 85, in inline
+    self._walk_schema()
+  File "/home/tammach/.local/lib/python3.7/site-packages/rpdk/core/jsonutils/inliner.py", line 27, in _walk_schema
+    self._walk(self.schema, (BASE,))
+  File "/home/tammach/.local/lib/python3.7/site-packages/rpdk/core/jsonutils/inliner.py", line 52, in _walk
+    self._walk(value, old_path + (key,))
+  File "/home/tammach/.local/lib/python3.7/site-packages/rpdk/core/jsonutils/inliner.py", line 52, in _walk
+    self._walk(value, old_path + (key,))
+  File "/home/tammach/.local/lib/python3.7/site-packages/rpdk/core/jsonutils/inliner.py", line 39, in _walk
+    url, resolved = self.resolve(value)
+  File "/home/tammach/.local/lib/python3.7/site-packages/jsonschema/validators.py", line 766, in resolve
+    return url, self._remote_cache(url)
+  File "/home/tammach/.local/lib/python3.7/site-packages/jsonschema/validators.py", line 779, in resolve_from_url
+    raise exceptions.RefResolutionError(exc)
+jsonschema.exceptions.RefResolutionError: <urlopen error [Errno 2] No such file or directory: '/home/tammach/go/src/github.com/sayboras/aws-cloudformation-resource-providers-ssm-secure-param/aws.common.types.v1.json'>
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/tammach/.local/lib/python3.7/site-packages/rpdk/core/project.py", line 255, in load
+    self.load_schema()
+  File "/home/tammach/.local/lib/python3.7/site-packages/rpdk/core/project.py", line 191, in load_schema
+    self.schema = load_resource_spec(f)
+  File "/home/tammach/.local/lib/python3.7/site-packages/rpdk/core/data_loaders.py", line 120, in load_resource_spec
+    raise SpecValidationError(str(e)) from e
+rpdk.core.exceptions.SpecValidationError: <urlopen error [Errno 2] No such file or directory: '/home/tammach/go/src/github.com/sayboras/aws-cloudformation-resource-providers-ssm-secure-param/aws.common.types.v1.json'>
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/tammach/.local/lib/python3.7/site-packages/rpdk/core/cli.py", line 98, in main
+    args.command(args)
+  File "/home/tammach/.local/lib/python3.7/site-packages/rpdk/core/generate.py", line 14, in generate
+    project.load()
+  File "/home/tammach/.local/lib/python3.7/site-packages/rpdk/core/project.py", line 260, in load
+    self._raise_invalid_project(msg, e)
+  File "/home/tammach/.local/lib/python3.7/site-packages/rpdk/core/project.py", line 113, in _raise_invalid_project
+    raise InvalidProjectError(msg) from e
+rpdk.core.exceptions.InvalidProjectError: Resource specification is invalid: <urlopen error [Errno 2] No such file or directory: '/home/tammach/go/src/github.com/sayboras/aws-cloudformation-resource-providers-ssm-secure-param/aws.common.types.v1.json'>
+[2020-02-06T03:03:01Z] CRITICAL - Resource specification is invalid: <urlopen error [Errno 2] No such file or directory: '/home/tammach/go/src/github.com/sayboras/aws-cloudformation-resource-providers-ssm-secure-param/aws.common.types.v1.json'>
+[2020-02-06T03:04:49Z] DEBUG    - Logging set up successfully
+[2020-02-06T03:04:49Z] DEBUG    - Running generate: Namespace(command=<function generate at 0x7efbfce104d0>, subparser_name='generate', verbose=0, version=False)
+[2020-02-06T03:04:49Z] DEBUG    - Root directory: /home/tammach/go/src/github.com/sayboras/aws-cloudformation-resource-providers-ssm-secure-param
+[2020-02-06T03:04:49Z] DEBUG    - Loading project file '/home/tammach/go/src/github.com/sayboras/aws-cloudformation-resource-providers-ssm-secure-param/.rpdk-config'
+[2020-02-06T03:04:49Z] INFO     - Validating your resource specification...
+[2020-02-06T03:04:49Z] DEBUG    - Resource spec decode failed
+Traceback (most recent call last):
+  File "/home/tammach/.local/lib/python3.7/site-packages/rpdk/core/data_loaders.py", line 95, in load_resource_spec
+    resource_spec = json.load(resource_spec_file)
+  File "/usr/lib/python3.7/json/__init__.py", line 296, in load
+    parse_constant=parse_constant, object_pairs_hook=object_pairs_hook, **kw)
+  File "/usr/lib/python3.7/json/__init__.py", line 348, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.7/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.7/json/decoder.py", line 353, in raw_decode
+    obj, end = self.scan_once(s, idx)
+json.decoder.JSONDecodeError: Expecting ',' delimiter: line 37 column 5 (char 1221)
+[2020-02-06T03:04:49Z] DEBUG    - Resource specification is invalid: Expecting ',' delimiter: line 37 column 5 (char 1221)
+Traceback (most recent call last):
+  File "/home/tammach/.local/lib/python3.7/site-packages/rpdk/core/data_loaders.py", line 95, in load_resource_spec
+    resource_spec = json.load(resource_spec_file)
+  File "/usr/lib/python3.7/json/__init__.py", line 296, in load
+    parse_constant=parse_constant, object_pairs_hook=object_pairs_hook, **kw)
+  File "/usr/lib/python3.7/json/__init__.py", line 348, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.7/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.7/json/decoder.py", line 353, in raw_decode
+    obj, end = self.scan_once(s, idx)
+json.decoder.JSONDecodeError: Expecting ',' delimiter: line 37 column 5 (char 1221)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/tammach/.local/lib/python3.7/site-packages/rpdk/core/project.py", line 255, in load
+    self.load_schema()
+  File "/home/tammach/.local/lib/python3.7/site-packages/rpdk/core/project.py", line 191, in load_schema
+    self.schema = load_resource_spec(f)
+  File "/home/tammach/.local/lib/python3.7/site-packages/rpdk/core/data_loaders.py", line 98, in load_resource_spec
+    raise SpecValidationError(str(e)) from e
+rpdk.core.exceptions.SpecValidationError: Expecting ',' delimiter: line 37 column 5 (char 1221)
+[2020-02-06T03:04:49Z] DEBUG    - Caught exit recommendation
+Traceback (most recent call last):
+  File "/home/tammach/.local/lib/python3.7/site-packages/rpdk/core/data_loaders.py", line 95, in load_resource_spec
+    resource_spec = json.load(resource_spec_file)
+  File "/usr/lib/python3.7/json/__init__.py", line 296, in load
+    parse_constant=parse_constant, object_pairs_hook=object_pairs_hook, **kw)
+  File "/usr/lib/python3.7/json/__init__.py", line 348, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.7/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.7/json/decoder.py", line 353, in raw_decode
+    obj, end = self.scan_once(s, idx)
+json.decoder.JSONDecodeError: Expecting ',' delimiter: line 37 column 5 (char 1221)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/tammach/.local/lib/python3.7/site-packages/rpdk/core/project.py", line 255, in load
+    self.load_schema()
+  File "/home/tammach/.local/lib/python3.7/site-packages/rpdk/core/project.py", line 191, in load_schema
+    self.schema = load_resource_spec(f)
+  File "/home/tammach/.local/lib/python3.7/site-packages/rpdk/core/data_loaders.py", line 98, in load_resource_spec
+    raise SpecValidationError(str(e)) from e
+rpdk.core.exceptions.SpecValidationError: Expecting ',' delimiter: line 37 column 5 (char 1221)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/tammach/.local/lib/python3.7/site-packages/rpdk/core/cli.py", line 98, in main
+    args.command(args)
+  File "/home/tammach/.local/lib/python3.7/site-packages/rpdk/core/generate.py", line 14, in generate
+    project.load()
+  File "/home/tammach/.local/lib/python3.7/site-packages/rpdk/core/project.py", line 260, in load
+    self._raise_invalid_project(msg, e)
+  File "/home/tammach/.local/lib/python3.7/site-packages/rpdk/core/project.py", line 113, in _raise_invalid_project
+    raise InvalidProjectError(msg) from e
+rpdk.core.exceptions.InvalidProjectError: Resource specification is invalid: Expecting ',' delimiter: line 37 column 5 (char 1221)
+[2020-02-06T03:04:49Z] CRITICAL - Resource specification is invalid: Expecting ',' delimiter: line 37 column 5 (char 1221)
+[2020-02-06T03:05:06Z] DEBUG    - Logging set up successfully
+[2020-02-06T03:05:06Z] DEBUG    - Running generate: Namespace(command=<function generate at 0x7efbfce104d0>, subparser_name='generate', verbose=0, version=False)
+[2020-02-06T03:05:06Z] DEBUG    - Root directory: /home/tammach/go/src/github.com/sayboras/aws-cloudformation-resource-providers-ssm-secure-param
+[2020-02-06T03:05:06Z] DEBUG    - Loading project file '/home/tammach/go/src/github.com/sayboras/aws-cloudformation-resource-providers-ssm-secure-param/.rpdk-config'
+[2020-02-06T03:05:06Z] INFO     - Validating your resource specification...
+[2020-02-06T03:05:07Z] DEBUG    - Resolved '#/definitions/Tag' to 'file:///home/tammach/go/src/github.com/sayboras/aws-cloudformation-resource-providers-ssm-secure-param/rp-ssm-secureparameter.json#/definitions/Tag'
+[2020-02-06T03:05:07Z] DEBUG    - Parsed 'file:///home/tammach/go/src/github.com/sayboras/aws-cloudformation-resource-providers-ssm-secure-param/rp-ssm-secureparameter.json#/definitions/Tag' to '(<BASE>, 'definitions', 'Tag')'
+[2020-02-06T03:05:07Z] DEBUG    - Edge from '(<BASE>, 'definitions', 'Tags', 'items')' to '(<BASE>, 'definitions', 'Tag')'
+[2020-02-06T03:05:07Z] DEBUG    - Resolved '#/definitions/Tags' to 'file:///home/tammach/go/src/github.com/sayboras/aws-cloudformation-resource-providers-ssm-secure-param/rp-ssm-secureparameter.json#/definitions/Tags'
+[2020-02-06T03:05:07Z] DEBUG    - Parsed 'file:///home/tammach/go/src/github.com/sayboras/aws-cloudformation-resource-providers-ssm-secure-param/rp-ssm-secureparameter.json#/definitions/Tags' to '(<BASE>, 'definitions', 'Tags')'
+[2020-02-06T03:05:07Z] DEBUG    - Edge from '(<BASE>, 'properties', 'Tags')' to '(<BASE>, 'definitions', 'Tags')'
+[2020-02-06T03:05:07Z] DEBUG    - Already visited '(<BASE>, 'definitions', 'Tags', 'items')' (#/definitions/Tag)
+[2020-02-06T03:05:07Z] DEBUG    - Rewriting refs in '<BASE>' (file:///home/tammach/go/src/github.com/sayboras/aws-cloudformation-resource-providers-ssm-secure-param/rp-ssm-secureparameter.json)
+[2020-02-06T03:05:07Z] DEBUG    -   '#/definitions/Tag' -> '#/definitions/Tag'
+[2020-02-06T03:05:07Z] DEBUG    -   '#/definitions/Tags' -> '#/definitions/Tags'
+[2020-02-06T03:05:07Z] DEBUG    - Writing Resource Role CloudFormation template: /home/tammach/go/src/github.com/sayboras/aws-cloudformation-resource-providers-ssm-secure-param/resource-role.yaml
+[2020-02-06T03:05:07Z] DEBUG    - Overwriting '/home/tammach/go/src/github.com/sayboras/aws-cloudformation-resource-providers-ssm-secure-param/resource-role.yaml'
+[2020-02-06T03:05:07Z] DEBUG    - Generate started
+[2020-02-06T03:05:07Z] DEBUG    - Writing Types
+[2020-02-06T03:05:07Z] DEBUG    - Overwriting '/home/tammach/go/src/github.com/sayboras/aws-cloudformation-resource-providers-ssm-secure-param/cmd/resource/model.go'
+[2020-02-06T03:05:07Z] DEBUG    - Writing project: /home/tammach/go/src/github.com/sayboras/aws-cloudformation-resource-providers-ssm-secure-param/cmd/main.go
+[2020-02-06T03:05:07Z] DEBUG    - Overwriting '/home/tammach/go/src/github.com/sayboras/aws-cloudformation-resource-providers-ssm-secure-param/cmd/main.go'
+[2020-02-06T03:05:07Z] WARNING  - Generated files for RP::SSM::SecureParameter
+[2020-02-06T03:05:07Z] DEBUG    - Finished generate
+[2020-02-06T03:07:41Z] DEBUG    - Logging set up successfully
+[2020-02-06T03:07:41Z] DEBUG    - Running generate: Namespace(command=<function generate at 0x7efbfce104d0>, subparser_name='generate', verbose=0, version=False)
+[2020-02-06T03:07:41Z] DEBUG    - Root directory: /home/tammach/go/src/github.com/sayboras/aws-cloudformation-resource-providers-ssm-secure-param
+[2020-02-06T03:07:41Z] DEBUG    - Loading project file '/home/tammach/go/src/github.com/sayboras/aws-cloudformation-resource-providers-ssm-secure-param/.rpdk-config'
+[2020-02-06T03:07:41Z] INFO     - Validating your resource specification...
+[2020-02-06T03:07:42Z] DEBUG    - Resolved '#/definitions/Tag' to 'file:///home/tammach/go/src/github.com/sayboras/aws-cloudformation-resource-providers-ssm-secure-param/rp-ssm-secureparameter.json#/definitions/Tag'
+[2020-02-06T03:07:42Z] DEBUG    - Parsed 'file:///home/tammach/go/src/github.com/sayboras/aws-cloudformation-resource-providers-ssm-secure-param/rp-ssm-secureparameter.json#/definitions/Tag' to '(<BASE>, 'definitions', 'Tag')'
+[2020-02-06T03:07:42Z] DEBUG    - Edge from '(<BASE>, 'definitions', 'Tags', 'items')' to '(<BASE>, 'definitions', 'Tag')'
+[2020-02-06T03:07:42Z] DEBUG    - Resolved '#/definitions/Tags' to 'file:///home/tammach/go/src/github.com/sayboras/aws-cloudformation-resource-providers-ssm-secure-param/rp-ssm-secureparameter.json#/definitions/Tags'
+[2020-02-06T03:07:42Z] DEBUG    - Parsed 'file:///home/tammach/go/src/github.com/sayboras/aws-cloudformation-resource-providers-ssm-secure-param/rp-ssm-secureparameter.json#/definitions/Tags' to '(<BASE>, 'definitions', 'Tags')'
+[2020-02-06T03:07:42Z] DEBUG    - Edge from '(<BASE>, 'properties', 'Tags')' to '(<BASE>, 'definitions', 'Tags')'
+[2020-02-06T03:07:42Z] DEBUG    - Already visited '(<BASE>, 'definitions', 'Tags', 'items')' (#/definitions/Tag)
+[2020-02-06T03:07:42Z] DEBUG    - Rewriting refs in '<BASE>' (file:///home/tammach/go/src/github.com/sayboras/aws-cloudformation-resource-providers-ssm-secure-param/rp-ssm-secureparameter.json)
+[2020-02-06T03:07:42Z] DEBUG    -   '#/definitions/Tag' -> '#/definitions/Tag'
+[2020-02-06T03:07:42Z] DEBUG    -   '#/definitions/Tags' -> '#/definitions/Tags'
+[2020-02-06T03:07:42Z] DEBUG    - Writing Resource Role CloudFormation template: /home/tammach/go/src/github.com/sayboras/aws-cloudformation-resource-providers-ssm-secure-param/resource-role.yaml
+[2020-02-06T03:07:42Z] DEBUG    - Overwriting '/home/tammach/go/src/github.com/sayboras/aws-cloudformation-resource-providers-ssm-secure-param/resource-role.yaml'
+[2020-02-06T03:07:42Z] DEBUG    - Generate started
+[2020-02-06T03:07:42Z] DEBUG    - Writing Types
+[2020-02-06T03:07:42Z] DEBUG    - Overwriting '/home/tammach/go/src/github.com/sayboras/aws-cloudformation-resource-providers-ssm-secure-param/cmd/resource/model.go'
+[2020-02-06T03:07:42Z] DEBUG    - Writing project: /home/tammach/go/src/github.com/sayboras/aws-cloudformation-resource-providers-ssm-secure-param/cmd/main.go
+[2020-02-06T03:07:42Z] DEBUG    - Overwriting '/home/tammach/go/src/github.com/sayboras/aws-cloudformation-resource-providers-ssm-secure-param/cmd/main.go'
+[2020-02-06T03:07:42Z] WARNING  - Generated files for RP::SSM::SecureParameter
+[2020-02-06T03:07:42Z] DEBUG    - Finished generate
+[2020-02-06T03:09:27Z] DEBUG    - Logging set up successfully
+[2020-02-06T03:09:27Z] DEBUG    - Running generate: Namespace(command=<function generate at 0x7efbfce104d0>, subparser_name='generate', verbose=0, version=False)
+[2020-02-06T03:09:27Z] DEBUG    - Root directory: /home/tammach/go/src/github.com/sayboras/aws-cloudformation-resource-providers-ssm-secure-param
+[2020-02-06T03:09:27Z] DEBUG    - Loading project file '/home/tammach/go/src/github.com/sayboras/aws-cloudformation-resource-providers-ssm-secure-param/.rpdk-config'
+[2020-02-06T03:09:27Z] INFO     - Validating your resource specification...
+[2020-02-06T03:09:28Z] DEBUG    - Resolved '#/definitions/Tag' to 'file:///home/tammach/go/src/github.com/sayboras/aws-cloudformation-resource-providers-ssm-secure-param/rp-ssm-secureparameter.json#/definitions/Tag'
+[2020-02-06T03:09:28Z] DEBUG    - Parsed 'file:///home/tammach/go/src/github.com/sayboras/aws-cloudformation-resource-providers-ssm-secure-param/rp-ssm-secureparameter.json#/definitions/Tag' to '(<BASE>, 'definitions', 'Tag')'
+[2020-02-06T03:09:28Z] DEBUG    - Edge from '(<BASE>, 'definitions', 'Tags', 'items')' to '(<BASE>, 'definitions', 'Tag')'
+[2020-02-06T03:09:28Z] DEBUG    - Resolved '#/definitions/Tags' to 'file:///home/tammach/go/src/github.com/sayboras/aws-cloudformation-resource-providers-ssm-secure-param/rp-ssm-secureparameter.json#/definitions/Tags'
+[2020-02-06T03:09:28Z] DEBUG    - Parsed 'file:///home/tammach/go/src/github.com/sayboras/aws-cloudformation-resource-providers-ssm-secure-param/rp-ssm-secureparameter.json#/definitions/Tags' to '(<BASE>, 'definitions', 'Tags')'
+[2020-02-06T03:09:28Z] DEBUG    - Edge from '(<BASE>, 'properties', 'Tags')' to '(<BASE>, 'definitions', 'Tags')'
+[2020-02-06T03:09:28Z] DEBUG    - Already visited '(<BASE>, 'definitions', 'Tags', 'items')' (#/definitions/Tag)
+[2020-02-06T03:09:28Z] DEBUG    - Rewriting refs in '<BASE>' (file:///home/tammach/go/src/github.com/sayboras/aws-cloudformation-resource-providers-ssm-secure-param/rp-ssm-secureparameter.json)
+[2020-02-06T03:09:28Z] DEBUG    -   '#/definitions/Tag' -> '#/definitions/Tag'
+[2020-02-06T03:09:28Z] DEBUG    -   '#/definitions/Tags' -> '#/definitions/Tags'
+[2020-02-06T03:09:28Z] DEBUG    - Writing Resource Role CloudFormation template: /home/tammach/go/src/github.com/sayboras/aws-cloudformation-resource-providers-ssm-secure-param/resource-role.yaml
+[2020-02-06T03:09:28Z] DEBUG    - Overwriting '/home/tammach/go/src/github.com/sayboras/aws-cloudformation-resource-providers-ssm-secure-param/resource-role.yaml'
+[2020-02-06T03:09:28Z] DEBUG    - Generate started
+[2020-02-06T03:09:28Z] DEBUG    - Writing Types
+[2020-02-06T03:09:28Z] DEBUG    - Overwriting '/home/tammach/go/src/github.com/sayboras/aws-cloudformation-resource-providers-ssm-secure-param/cmd/resource/model.go'
+[2020-02-06T03:09:28Z] DEBUG    - Writing project: /home/tammach/go/src/github.com/sayboras/aws-cloudformation-resource-providers-ssm-secure-param/cmd/main.go
+[2020-02-06T03:09:28Z] DEBUG    - Overwriting '/home/tammach/go/src/github.com/sayboras/aws-cloudformation-resource-providers-ssm-secure-param/cmd/main.go'
+[2020-02-06T03:09:28Z] WARNING  - Generated files for RP::SSM::SecureParameter
+[2020-02-06T03:09:28Z] DEBUG    - Finished generate
