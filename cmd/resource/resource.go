@@ -1,11 +1,12 @@
 package resource
 
 import (
+	"log"
+
 	"github.com/aws-cloudformation/cloudformation-cli-go-plugin/cfn/encoding"
 	"github.com/aws-cloudformation/cloudformation-cli-go-plugin/cfn/handler"
 	"github.com/aws/aws-sdk-go/aws"
 	"github.com/aws/aws-sdk-go/service/ssm"
-	"log"
 )
 
 // Create handles the Create event from the Cloudformation service.
