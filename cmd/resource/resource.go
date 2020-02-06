@@ -85,11 +85,12 @@ func Update(req handler.Request, prevModel *Model, currentModel *Model) (handler
 		Name:           currentModel.Name.Value(),
 		Overwrite:      aws.Bool(true),
 		Policies:       currentModel.Policies.Value(),
-		Tags:           tags,
 		Tier:           currentModel.Tier.Value(),
 		Type:           aws.String(ssm.ParameterTypeSecureString),
 		Value:          currentModel.Value.Value(),
 	}
+
+	//TODO find out the different in tags and call AddTags or RemoveTags accordingly
 
 	_, err := client.PutParameter(input)
 	if err != nil {
