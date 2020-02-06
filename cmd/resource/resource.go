@@ -70,13 +70,6 @@ func Read(req handler.Request, prevModel *Model, currentModel *Model) (handler.P
 // Update handles the Update event from the Cloudformation service.
 func Update(req handler.Request, prevModel *Model, currentModel *Model) (handler.ProgressEvent, error) {
 	client := ssm.New(req.Session)
-	tags := make([]*ssm.Tag, 0)
-	for _, t := range currentModel.Tags {
-		tags = append(tags, &ssm.Tag{
-			Key:   t.Key.Value(),
-			Value: t.Value.Value(),
-		})
-	}
 
 	input := &ssm.PutParameterInput{
 		AllowedPattern: currentModel.AllowedPattern.Value(),
@@ -85,7 +78,6 @@ func Update(req handler.Request, prevModel *Model, currentModel *Model) (handler
 		Name:           currentModel.Name.Value(),
 		Overwrite:      aws.Bool(true),
 		Policies:       currentModel.Policies.Value(),
-		Tags:           tags,
 		Tier:           currentModel.Tier.Value(),
 		Type:           aws.String(ssm.ParameterTypeSecureString),
 		Value:          currentModel.Value.Value(),

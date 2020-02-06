@@ -7,5 +7,8 @@ Resources:
     Properties:
       Description: "Sample secure ssm"
       Name: "/sample/secure/ssm"
-      Value: "secret"
+      Value: "another value"
       KeyId: "alias/aws/ssm"
+      Tags:
+        - Key: "key"
+          Value: "value"
