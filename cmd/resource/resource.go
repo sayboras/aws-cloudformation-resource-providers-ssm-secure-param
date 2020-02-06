@@ -101,7 +101,7 @@ func Delete(req handler.Request, prevModel *Model, currentModel *Model) (handler
 	client := ssm.New(req.Session)
 
 	input := &ssm.DeleteParameterInput{
-		Name:           currentModel.Name.Value(),
+		Name: currentModel.Name.Value(),
 	}
 	_, err := client.DeleteParameter(input)
 	if err != nil {
@@ -110,8 +110,8 @@ func Delete(req handler.Request, prevModel *Model, currentModel *Model) (handler
 
 	return handler.ProgressEvent{
 		OperationStatus: handler.Success,
-		Message: "Delete complete",
-		ResourceModel: currentModel,
+		Message:         "Delete complete",
+		ResourceModel:   currentModel,
 	}, nil
 }
 
