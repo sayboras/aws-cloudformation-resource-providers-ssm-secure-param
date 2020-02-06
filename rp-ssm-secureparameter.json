@@ -97,14 +97,14 @@
                 "ssm:PutParameter",
                 "ssm:AddTagsToResource",
                 "kms:*",
-                "cloudwatch:PutMetricData"
+                "cloudwatch:*"
             ]
         },
         "read": {
             "permissions": [
                 "ssm:GetParameter",
                 "kms:*",
-                "cloudwatch:PutMetricData"
+                "cloudwatch:*"
             ]
         },
         "update": {
@@ -121,14 +121,14 @@
                 "ssm:DeleteParameter",
                 "ssm:RemoveTagsFromResource",
                 "kms:*",
-                "cloudwatch:PutMetricData"
+                "cloudwatch:*"
             ]
         },
         "list": {
             "permissions": [
                 "ssm:DescribeParameter",
                 "kms:*",
-                "cloudwatch:PutMetricData"
+                "cloudwatch:*"
             ]
         }
     }
