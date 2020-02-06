@@ -1,123 +1,148 @@
 package resource
 
 import (
-	"errors"
-
+	"github.com/aws-cloudformation/cloudformation-cli-go-plugin/cfn/encoding"
 	"github.com/aws-cloudformation/cloudformation-cli-go-plugin/cfn/handler"
+	"github.com/aws/aws-sdk-go/aws"
+	"github.com/aws/aws-sdk-go/service/ssm"
 )
-
 
 // Create handles the Create event from the Cloudformation service.
 func Create(req handler.Request, prevModel *Model, currentModel *Model) (handler.ProgressEvent, error) {
-    // Add your code here:
-    // * Make API calls (use req.Session)
-    // * Mutate the model
-    // * Check/set any callback context (req.CallbackContext / response.CallbackContext)
+	client := ssm.New(req.Session)
+	tags := make([]*ssm.Tag, 0)
+	for _, t := range currentModel.Tags {
+		tags = append(tags, &ssm.Tag{
+			Key:   t.Key.Value(),
+			Value: t.Value.Value(),
+		})
+	}
 
-    /*
-        // Construct a new handler.ProgressEvent and return it
-        response := handler.ProgressEvent{
-            OperationStatus: handler.Success,
-            Message: "Create complete",
-            ResourceModel: currentModel,
-        }
+	input := &ssm.PutParameterInput{
+		AllowedPattern: currentModel.AllowedPattern.Value(),
+		Description:    currentModel.Description.Value(),
+		KeyId:          currentModel.KeyId.Value(),
+		Name:           currentModel.Name.Value(),
+		Overwrite:      aws.Bool(false),
+		Policies:       currentModel.Policies.Value(),
+		Tags:           tags,
+		Tier:           currentModel.Tier.Value(),
+		Type:           aws.String(ssm.ParameterTypeSecureString),
+		Value:          currentModel.Value.Value(),
+	}
 
-        return response, nil
-    */
+	_, err := client.PutParameter(input)
+	if err != nil {
+		return handler.ProgressEvent{}, err
+	}
 
-    // Not implemented, return an empty handler.ProgressEvent
-    // and an error
-    return handler.ProgressEvent{}, errors.New("Not implemented: Create")
+	// Construct a new handler.ProgressEvent and return it
+	return handler.ProgressEvent{
+		OperationStatus: handler.Success,
+		Message:         "Create complete",
+		ResourceModel:   currentModel,
+	}, nil
 }
 
 // Read handles the Read event from the Cloudformation service.
 func Read(req handler.Request, prevModel *Model, currentModel *Model) (handler.ProgressEvent, error) {
-    // Add your code here:
-    // * Make API calls (use req.Session)
-    // * Mutate the model
-    // * Check/set any callback context (req.CallbackContext / response.CallbackContext)
+	client := ssm.New(req.Session)
+	input := &ssm.GetParameterInput{
+		Name:           currentModel.Name.Value(),
+		WithDecryption: aws.Bool(true),
+	}
+	parameter, err := client.GetParameter(input)
+	if err != nil {
+		return handler.ProgressEvent{}, err
+	}
 
-    /*
-        // Construct a new handler.ProgressEvent and return it
-        response := handler.ProgressEvent{
-            OperationStatus: handler.Success,
-            Message: "Read complete",
-            ResourceModel: currentModel,
-        }
+	// Assign the value
+	currentModel.Value = encoding.NewString(*parameter.Parameter.Value)
 
-        return response, nil
-    */
-
-    // Not implemented, return an empty handler.ProgressEvent
-    // and an error
-    return handler.ProgressEvent{}, errors.New("Not implemented: Read")
+	// Construct a new handler.ProgressEvent and return it
+	return handler.ProgressEvent{
+		OperationStatus: handler.Success,
+		Message:         "Read complete",
+		ResourceModel:   currentModel,
+	}, nil
 }
 
 // Update handles the Update event from the Cloudformation service.
 func Update(req handler.Request, prevModel *Model, currentModel *Model) (handler.ProgressEvent, error) {
-    // Add your code here:
-    // * Make API calls (use req.Session)
-    // * Mutate the model
-    // * Check/set any callback context (req.CallbackContext / response.CallbackContext)
+	client := ssm.New(req.Session)
+	tags := make([]*ssm.Tag, 0)
+	for _, t := range currentModel.Tags {
+		tags = append(tags, &ssm.Tag{
+			Key:   t.Key.Value(),
+			Value: t.Value.Value(),
+		})
+	}
 
-    /*
-        // Construct a new handler.ProgressEvent and return it
-        response := handler.ProgressEvent{
-            OperationStatus: handler.Success,
-            Message: "Update complete",
-            ResourceModel: currentModel,
-        }
+	input := &ssm.PutParameterInput{
+		AllowedPattern: currentModel.AllowedPattern.Value(),
+		Description:    currentModel.Description.Value(),
+		KeyId:          currentModel.KeyId.Value(),
+		Name:           currentModel.Name.Value(),
+		Overwrite:      aws.Bool(true),
+		Policies:       currentModel.Policies.Value(),
+		Tags:           tags,
+		Tier:           currentModel.Tier.Value(),
+		Type:           aws.String(ssm.ParameterTypeSecureString),
+		Value:          currentModel.Value.Value(),
+	}
 
-        return response, nil
-    */
+	_, err := client.PutParameter(input)
+	if err != nil {
+		return handler.ProgressEvent{}, err
+	}
 
-    // Not implemented, return an empty handler.ProgressEvent
-    // and an error
-    return handler.ProgressEvent{}, errors.New("Not implemented: Update")
+	// Construct a new handler.ProgressEvent and return it
+	return handler.ProgressEvent{
+		OperationStatus: handler.Success,
+		Message:         "Update complete",
+		ResourceModel:   currentModel,
+	}, nil
 }
 
 // Delete handles the Delete event from the Cloudformation service.
 func Delete(req handler.Request, prevModel *Model, currentModel *Model) (handler.ProgressEvent, error) {
-    // Add your code here:
-    // * Make API calls (use req.Session)
-    // * Mutate the model
-    // * Check/set any callback context (req.CallbackContext / response.CallbackContext)
+	client := ssm.New(req.Session)
 
-    /*
-        // Construct a new handler.ProgressEvent and return it
-        response := handler.ProgressEvent{
-            OperationStatus: handler.Success,
-            Message: "Delete complete",
-            ResourceModel: currentModel,
-        }
+	input := &ssm.DeleteParameterInput{
+		Name:           currentModel.Name.Value(),
+	}
+	_, err := client.DeleteParameter(input)
+	if err != nil {
+		return handler.ProgressEvent{}, err
+	}
 
-        return response, nil
-    */
-
-    // Not implemented, return an empty handler.ProgressEvent
-    // and an error
-    return handler.ProgressEvent{}, errors.New("Not implemented: Delete")
+	return handler.ProgressEvent{
+		OperationStatus: handler.Success,
+		Message: "Delete complete",
+		ResourceModel: currentModel,
+	}, nil
 }
 
 // List handles the List event from the Cloudformation service.
 func List(req handler.Request, prevModel *Model, currentModel *Model) (handler.ProgressEvent, error) {
-    // Add your code here:
-    // * Make API calls (use req.Session)
-    // * Mutate the model
-    // * Check/set any callback context (req.CallbackContext / response.CallbackContext)
+	client := ssm.New(req.Session)
+	input := &ssm.GetParameterInput{
+		Name:           currentModel.Name.Value(),
+		WithDecryption: aws.Bool(true),
+	}
+	parameter, err := client.GetParameter(input)
+	if err != nil {
+		return handler.ProgressEvent{}, err
+	}
 
-    /*
-        // Construct a new handler.ProgressEvent and return it
-        response := handler.ProgressEvent{
-            OperationStatus: handler.Success,
-            Message: "List complete",
-            ResourceModel: currentModel,
-        }
+	// Assign the value
+	currentModel.Value = encoding.NewString(*parameter.Parameter.Value)
 
-        return response, nil
-    */
+	// Construct a new handler.ProgressEvent and return it
+	return handler.ProgressEvent{
+		OperationStatus: handler.Success,
+		Message:         "Read complete",
+		ResourceModel:   currentModel,
+	}, nil
 
-    // Not implemented, return an empty handler.ProgressEvent
-    // and an error
-    return handler.ProgressEvent{}, errors.New("Not implemented: List")
 }

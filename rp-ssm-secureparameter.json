@@ -53,6 +53,10 @@
             "minLength": 1,
             "maxLength": 2048
         },
+        "KeyId": {
+            "description": "The Key Id for encryption",
+            "type": "string"
+        },
         "Policies": {
             "description": "Information about the policies assigned to a parameter.",
             "type": "string"
@@ -78,7 +82,8 @@
     "additionalProperties": false,
     "required": [
         "Value",
-        "Name"
+        "Name",
+        "KeyId"
     ],
     "readOnlyProperties": [
         "/properties/Name"

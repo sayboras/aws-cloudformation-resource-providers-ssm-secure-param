@@ -15,6 +15,7 @@ type Model struct {
 	AllowedPattern *encoding.String `json:"AllowedPattern,omitempty"`
 	Description    *encoding.String `json:"Description,omitempty"`
 	Name           *encoding.String `json:"Name,omitempty"`
+	KeyId          *encoding.String `json:"KeyId,omitempty"`
 	Policies       *encoding.String `json:"Policies,omitempty"`
 	Tier           *encoding.String `json:"Tier,omitempty"`
 	Value          *encoding.String `json:"Value,omitempty"`
