@@ -5,10 +5,12 @@ import (
 	"github.com/aws-cloudformation/cloudformation-cli-go-plugin/cfn/handler"
 	"github.com/aws/aws-sdk-go/aws"
 	"github.com/aws/aws-sdk-go/service/ssm"
+	"log"
 )
 
 // Create handles the Create event from the Cloudformation service.
 func Create(req handler.Request, prevModel *Model, currentModel *Model) (handler.ProgressEvent, error) {
+	log.Printf("Create with current model: %+v, previous model %+v\n", currentModel, prevModel)
 	ssmClient := ssm.New(req.Session)
 	tags := make([]*ssm.Tag, 0)
 	for _, t := range currentModel.Tags {
@@ -35,6 +37,10 @@ func Create(req handler.Request, prevModel *Model, currentModel *Model) (handler
 		return handler.ProgressEvent{}, err
 	}
 
+	if currentModel.Name.Value() != prevModel.Name.Value() {
+		_, _ = ssmClient.DeleteParameter(&ssm.DeleteParameterInput{Name: prevModel.Name.Value()})
+	}
+
 	// Construct a new handler.ProgressEvent and return it
 	return handler.ProgressEvent{
 		OperationStatus: handler.Success,
@@ -45,6 +51,7 @@ func Create(req handler.Request, prevModel *Model, currentModel *Model) (handler
 
 // Read handles the Read event from the Cloudformation service.
 func Read(req handler.Request, prevModel *Model, currentModel *Model) (handler.ProgressEvent, error) {
+	log.Printf("Read with current model: %+v, previous model %+v\n", currentModel, prevModel)
 	client := ssm.New(req.Session)
 
 	parameter, err := client.GetParameter(&ssm.GetParameterInput{
@@ -68,6 +75,7 @@ func Read(req handler.Request, prevModel *Model, currentModel *Model) (handler.P
 
 // Update handles the Update event from the Cloudformation service.
 func Update(req handler.Request, prevModel *Model, currentModel *Model) (handler.ProgressEvent, error) {
+	log.Printf("Update with current model: %+v, previous model %+v\n", currentModel, prevModel)
 	client := ssm.New(req.Session)
 
 	_, err := client.PutParameter(&ssm.PutParameterInput{
@@ -96,6 +104,7 @@ func Update(req handler.Request, prevModel *Model, currentModel *Model) (handler
 
 // Delete handles the Delete event from the Cloudformation service.
 func Delete(req handler.Request, prevModel *Model, currentModel *Model) (handler.ProgressEvent, error) {
+	log.Printf("Delete with current model: %+v, previous model %+v\n", currentModel, prevModel)
 	client := ssm.New(req.Session)
 
 	_, err := client.DeleteParameter(&ssm.DeleteParameterInput{
@@ -115,6 +124,7 @@ func Delete(req handler.Request, prevModel *Model, currentModel *Model) (handler
 
 // List handles the List event from the Cloudformation service.
 func List(req handler.Request, prevModel *Model, currentModel *Model) (handler.ProgressEvent, error) {
+	log.Printf("List with current model: %+v, previous model %+v\n", currentModel, prevModel)
 	client := ssm.New(req.Session)
 
 	parameter, err := client.GetParameter(&ssm.GetParameterInput{
