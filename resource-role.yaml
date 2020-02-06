@@ -23,6 +23,7 @@ Resources:
             Statement:
               - Effect: Allow
                 Action:
+                - "cloudwatch:PutMetricData"
                 - "kms:*"
                 - "ssm:AddTagsToResource"
                 - "ssm:DeleteParameter"
