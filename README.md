@@ -25,3 +25,12 @@ Resources:
         - Key: "key"
           Value: "value"
 ```
+
+# Test
+
+The below commands can be used for testing as per [docs](https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-walkthrough.html#resource-type-walkthrough-test)
+
+```shell script
+sam local invoke TestEntrypoint --event sam-tests/create.json
+sam local invoke TestEntrypoint --event sam-tests/delete.json
+```

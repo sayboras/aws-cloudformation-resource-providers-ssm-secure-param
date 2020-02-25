@@ -1,135 +1,135 @@
 {
-    "typeName": "RP::SSM::SecureParameter",
-    "description": "A resource provider for SSM Secure Parameter",
-    "sourceUrl": "https://github.com/sayboras/aws-cloudformation-resource-providers-ssm-secure-param.git",
-    "definitions": {
-        "Arn": {
-            "type": "string",
-            "pattern": "^arn:aws(-(cn|us-gov))?:[a-z-]+:(([a-z]+-)+[0-9])?:([0-9]{12})?:[^.]+$"
-        },
-        "Tags": {
-            "type": "array",
-            "insertionOrder": false,
-            "uniqueItems": true,
-            "items": {
-                "$ref": "#/definitions/Tag"
-            }
-        },
-        "Tag": {
-            "type": "object",
-            "properties": {
-                "Key": {
-                    "type": "string",
-                    "minLength": 1,
-                    "maxLength": 127,
-                    "pattern": "^(?!aws:.*)[a-z0-9\\s\\_\\.\\/\\=\\+\\-]+$"
-                },
-                "Value": {
-                    "type": "string",
-                    "minLength": 1,
-                    "maxLength": 255,
-                    "pattern": "^(?!aws:.*)[a-z0-9\\s\\_\\.\\/\\=\\+\\-]+$"
-                }
-            },
-            "additionalProperties": false
-        }
+  "typeName": "RP::SSM::SecureParameter",
+  "description": "A resource provider for SSM Secure Parameter",
+  "sourceUrl": "https://github.com/sayboras/aws-cloudformation-resource-providers-ssm-secure-param.git",
+  "definitions": {
+    "Arn": {
+      "type": "string",
+      "pattern": "^arn:aws(-(cn|us-gov))?:[a-z-]+:(([a-z]+-)+[0-9])?:([0-9]{12})?:[^.]+$"
     },
-    "properties": {
-        "AllowedPattern": {
-            "description": "A regular expression used to validate the parameter value. For example, for String types with values restricted to numbers, you can specify the following: AllowedPattern=^\\d+$",
-            "type": "string",
-            "minLength": 0,
-            "maxLength": 1024
-        },
-        "Description": {
-            "description": "Information about the parameter.",
-            "type": "string",
-            "minLength": 0,
-            "maxLength": 1024
-        },
-        "Name": {
-            "description": "The name of the parameter.",
-            "type": "string",
-            "minLength": 1,
-            "maxLength": 2048
-        },
-        "KeyId": {
-            "description": "The Key Id for encryption",
-            "type": "string"
-        },
-        "Policies": {
-            "description": "Information about the policies assigned to a parameter.",
-            "type": "string"
-        },
-        "Tier": {
-            "description": "The parameter tier.",
-            "type": "string",
-            "enum": [
-                "Advanced",
-                "Intelligent-Tiering",
-                "Standard"
-            ]
+    "Tags": {
+      "type": "array",
+      "insertionOrder": false,
+      "uniqueItems": true,
+      "items": {
+        "$ref": "#/definitions/Tag"
+      }
+    },
+    "Tag": {
+      "type": "object",
+      "properties": {
+        "Key": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 127,
+          "pattern": "^(?!aws:.*)[a-z0-9\\s\\_\\.\\/\\=\\+\\-]+$"
         },
         "Value": {
-            "description": "The parameter value.",
-            "type": "string"
-        },
-        "Tags": {
-            "description": "Optional metadata that you assign to a resource in the form of an arbitrary set of tags (key-value pairs)",
-            "$ref": "#/definitions/Tags"
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 255,
+          "pattern": "^(?!aws:.*)[a-z0-9\\s\\_\\.\\/\\=\\+\\-]+$"
         }
-    },
-    "additionalProperties": false,
-    "required": [
-        "Value",
-        "Name",
-        "KeyId"
-    ],
-    "readOnlyProperties": [
-        "/properties/Name"
-    ],
-    "primaryIdentifier": [
-        "/properties/Name"
-    ],
-    "handlers": {
-        "create": {
-            "permissions": [
-                "ssm:PutParameter",
-                "ssm:AddTagsToResource",
-                "kms:*",
-                "cloudwatch:*"
-            ]
-        },
-        "read": {
-            "permissions": [
-                "ssm:GetParameter",
-                "kms:*",
-                "cloudwatch:*"
-            ]
-        },
-        "update": {
-            "permissions": [
-                "ssm:PutParameter",
-                "ssm:AddTagsToResource",
-                "ssm:RemoveTagsFromResource",
-                "kms:*",
-                "cloudwatch:PutMetricData"
-            ]
-        },
-        "delete": {
-            "permissions": [
-                "ssm:DeleteParameter",
-                "ssm:RemoveTagsFromResource",
-                "kms:*",
-                "cloudwatch:*"
-            ]
-        },
-        "list": {
-            "permissions": [
-                "ssm:DescribeParameter",
-                "kms:*",
-                "cloudwatch:*"
-            ]
-        }
+      },
+      "additionalProperties": false
     }
+  },
+  "properties": {
+    "AllowedPattern": {
+      "description": "A regular expression used to validate the parameter value. For example, for String types with values restricted to numbers, you can specify the following: AllowedPattern=^\\d+$",
+      "type": "string",
+      "minLength": 0,
+      "maxLength": 1024
+    },
+    "Description": {
+      "description": "Information about the parameter.",
+      "type": "string",
+      "minLength": 0,
+      "maxLength": 1024
+    },
+    "Name": {
+      "description": "The name of the parameter.",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 2048
+    },
+    "KeyId": {
+      "description": "The Key Id for encryption",
+      "type": "string"
+    },
+    "Policies": {
+      "description": "Information about the policies assigned to a parameter.",
+      "type": "string"
+    },
+    "Tier": {
+      "description": "The parameter tier.",
+      "type": "string",
+      "enum": [
+        "Advanced",
+        "Intelligent-Tiering",
+        "Standard"
+      ]
+    },
+    "Value": {
+      "description": "The parameter value.",
+      "type": "string"
+    },
+    "Tags": {
+      "description": "Optional metadata that you assign to a resource in the form of an arbitrary set of tags (key-value pairs)",
+      "$ref": "#/definitions/Tags"
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "Value",
+    "Name",
+    "KeyId"
+  ],
+  "readOnlyProperties": [
+    "/properties/Name"
+  ],
+  "primaryIdentifier": [
+    "/properties/Name"
+  ],
+  "handlers": {
+    "create": {
+      "permissions": [
+        "ssm:PutParameter",
+        "ssm:AddTagsToResource",
+        "kms:*",
+        "cloudwatch:*"
+      ]
+    },
+    "read": {
+      "permissions": [
+        "ssm:GetParameter",
+        "kms:*",
+        "cloudwatch:*"
+      ]
+    },
+    "update": {
+      "permissions": [
+        "ssm:PutParameter",
+        "ssm:AddTagsToResource",
+        "ssm:RemoveTagsFromResource",
+        "kms:*",
+        "cloudwatch:PutMetricData"
+      ]
+    },
+    "delete": {
+      "permissions": [
+        "ssm:DeleteParameter",
+        "ssm:RemoveTagsFromResource",
+        "kms:*",
+        "cloudwatch:*"
+      ]
+    },
+    "list": {
+      "permissions": [
+        "ssm:DescribeParameter",
+        "kms:*",
+        "cloudwatch:*"
+      ]
+    }
+  }
 }

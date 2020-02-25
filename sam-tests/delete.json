@@ -1,0 +1,16 @@
+{
+  "credentials": {
+    "accessKeyId": "XXX",
+    "secretAccessKey": "XXX",
+    "sessionToken": "XXX"
+  },
+  "action": "DELETE",
+  "request": {
+    "clientRequestToken": "4b90a7e4-b790-456b-a937-234123123",
+    "desiredResourceState": {
+      "Name": "/sample/secure/ssm"
+    },
+    "logicalResourceIdentifier": "SampleSecureSSMParam"
+  },
+  "callbackContext": null
+}
