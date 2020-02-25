@@ -3,7 +3,6 @@ package resource
 import (
 	"log"
 
-	"github.com/aws-cloudformation/cloudformation-cli-go-plugin/cfn/encoding"
 	"github.com/aws-cloudformation/cloudformation-cli-go-plugin/cfn/handler"
 	"github.com/aws/aws-sdk-go/aws"
 	"github.com/aws/aws-sdk-go/service/ssm"
@@ -16,30 +15,30 @@ func Create(req handler.Request, prevModel *Model, currentModel *Model) (handler
 	tags := make([]*ssm.Tag, 0)
 	for _, t := range currentModel.Tags {
 		tags = append(tags, &ssm.Tag{
-			Key:   t.Key.Value(),
-			Value: t.Value.Value(),
+			Key:   t.Key,
+			Value: t.Value,
 		})
 	}
 
 	_, err := ssmClient.PutParameter(&ssm.PutParameterInput{
-		AllowedPattern: currentModel.AllowedPattern.Value(),
-		Description:    currentModel.Description.Value(),
-		KeyId:          currentModel.KeyId.Value(),
-		Name:           currentModel.Name.Value(),
+		AllowedPattern: currentModel.AllowedPattern,
+		Description:    currentModel.Description,
+		KeyId:          currentModel.KeyId,
+		Name:           currentModel.Name,
 		Overwrite:      aws.Bool(false),
-		Policies:       currentModel.Policies.Value(),
+		Policies:       currentModel.Policies,
 		Tags:           tags,
-		Tier:           currentModel.Tier.Value(),
+		Tier:           currentModel.Tier,
 		Type:           aws.String(ssm.ParameterTypeSecureString),
-		Value:          currentModel.Value.Value(),
+		Value:          currentModel.Value,
 	})
 
 	if err != nil {
 		return handler.ProgressEvent{}, err
 	}
 
-	if currentModel.Name.Value() != prevModel.Name.Value() {
-		_, _ = ssmClient.DeleteParameter(&ssm.DeleteParameterInput{Name: prevModel.Name.Value()})
+	if currentModel.Name != prevModel.Name {
+		_, _ = ssmClient.DeleteParameter(&ssm.DeleteParameterInput{Name: prevModel.Name})
 	}
 
 	// Construct a new handler.ProgressEvent and return it
@@ -56,7 +55,7 @@ func Read(req handler.Request, prevModel *Model, currentModel *Model) (handler.P
 	client := ssm.New(req.Session)
 
 	parameter, err := client.GetParameter(&ssm.GetParameterInput{
-		Name:           currentModel.Name.Value(),
+		Name:           currentModel.Name,
 		WithDecryption: aws.Bool(true),
 	})
 	if err != nil {
@@ -64,7 +63,7 @@ func Read(req handler.Request, prevModel *Model, currentModel *Model) (handler.P
 	}
 
 	// Assign the value
-	currentModel.Value = encoding.NewString(*parameter.Parameter.Value)
+	currentModel.Value = aws.String(*parameter.Parameter.Value)
 
 	// Construct a new handler.ProgressEvent and return it
 	return handler.ProgressEvent{
@@ -80,15 +79,15 @@ func Update(req handler.Request, prevModel *Model, currentModel *Model) (handler
 	client := ssm.New(req.Session)
 
 	_, err := client.PutParameter(&ssm.PutParameterInput{
-		AllowedPattern: currentModel.AllowedPattern.Value(),
-		Description:    currentModel.Description.Value(),
-		KeyId:          currentModel.KeyId.Value(),
-		Name:           currentModel.Name.Value(),
+		AllowedPattern: currentModel.AllowedPattern,
+		Description:    currentModel.Description,
+		KeyId:          currentModel.KeyId,
+		Name:           currentModel.Name,
 		Overwrite:      aws.Bool(true),
-		Policies:       currentModel.Policies.Value(),
-		Tier:           currentModel.Tier.Value(),
+		Policies:       currentModel.Policies,
+		Tier:           currentModel.Tier,
 		Type:           aws.String(ssm.ParameterTypeSecureString),
-		Value:          currentModel.Value.Value(),
+		Value:          currentModel.Value,
 	})
 
 	if err != nil {
@@ -109,7 +108,7 @@ func Delete(req handler.Request, prevModel *Model, currentModel *Model) (handler
 	client := ssm.New(req.Session)
 
 	_, err := client.DeleteParameter(&ssm.DeleteParameterInput{
-		Name: currentModel.Name.Value(),
+		Name: currentModel.Name,
 	})
 
 	if err != nil {
@@ -129,7 +128,7 @@ func List(req handler.Request, prevModel *Model, currentModel *Model) (handler.P
 	client := ssm.New(req.Session)
 
 	parameter, err := client.GetParameter(&ssm.GetParameterInput{
-		Name:           currentModel.Name.Value(),
+		Name:           currentModel.Name,
 		WithDecryption: aws.Bool(true),
 	})
 
@@ -138,7 +137,7 @@ func List(req handler.Request, prevModel *Model, currentModel *Model) (handler.P
 	}
 
 	// Assign the value
-	currentModel.Value = encoding.NewString(*parameter.Parameter.Value)
+	currentModel.Value = aws.String(*parameter.Parameter.Value)
 
 	// Construct a new handler.ProgressEvent and return it
 	return handler.ProgressEvent{

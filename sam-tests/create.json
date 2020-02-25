@@ -1,0 +1,24 @@
+{
+  "credentials": {
+    "accessKeyId": "XXX",
+    "secretAccessKey": "XXX",
+    "sessionToken": "XXX"
+  },
+  "action": "CREATE",
+  "request": {
+    "clientRequestToken": "4b90a7e4-b790-456b-a937-123123123",
+    "desiredResourceState": {
+      "Name": "/sample/secure/ssm",
+      "Value": "secure value",
+      "KeyId": "alias/aws/ssm",
+      "Tags": [
+        {
+          "Key": "key",
+          "Value": "value"
+        }
+      ]
+    },
+    "logicalResourceIdentifier": "SampleSecureSSMParam"
+  },
+  "callbackContext": null
+}
