@@ -11,5 +11,8 @@ test:
 clean:
 	rm -rf bin
 
+deploy: build
+	cfn submit --set-default
+
 lint:
 	golangci-lint run ./...
